@@ -13,7 +13,12 @@
     :depends-on (cffi)
     :serial t
     ;; components likely need manual reordering
-    :components ((:module src :components ((:file "sndfile")
-					   (:file "cl-sndfile-swig" :depends-on ("sndfile")))))
+    :components ((:module src
+			  :components ((:file "sndfile")
+				       (:file "cl-sndfile-swig"
+					      :depends-on ("sndfile"))
+				       (:module utils
+						:components ((:file "sndfile-info"))
+						:depends-on ("cl-sndfile-swig")))))
     ;; :long-description ""
     )

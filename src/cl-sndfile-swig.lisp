@@ -218,7 +218,7 @@
 (cl:defconstant #.(swig-lispify "SF_COUNT_MAX" 'constant) #x7FFFFFFFFFFFFFFF)
 
 (cffi:defcstruct #.(swig-lispify "SF_INFO" 'classname)
-	(#.(swig-lispify "frames" 'slotname) :pointer)
+	(#.(swig-lispify "frames" 'slotname) :long-long)
 	(#.(swig-lispify "samplerate" 'slotname) :int)
 	(#.(swig-lispify "channels" 'slotname) :int)
 	(#.(swig-lispify "format" 'slotname) :int)
@@ -243,8 +243,8 @@
 	(#.(swig-lispify "name" 'slotname) :string))
 
 (cffi:defcstruct #.(swig-lispify "SF_EMBED_FILE_INFO" 'classname)
-	(#.(swig-lispify "offset" 'slotname) :pointer)
-	(#.(swig-lispify "length" 'slotname) :pointer))
+	(#.(swig-lispify "offset" 'slotname) :long-long)
+	(#.(swig-lispify "length" 'slotname) :long-long))
 
 (defanonenum 
 	(#.(swig-lispify "SF_LOOP_NONE" 'enumvalue) 800)
@@ -344,7 +344,7 @@
 
 (cffi:defcfun ("sf_seek" #.(swig-lispify "sf_seek" 'function)) :pointer
   (sndfile :pointer)
-  (frames :pointer)
+  (frames :long-long)
   (whence :int))
 
 (cffi:defcfun ("sf_set_string" #.(swig-lispify "sf_set_string" 'function)) :int
@@ -361,92 +361,92 @@
 (cffi:defcfun ("sf_read_raw" #.(swig-lispify "sf_read_raw" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (bytes :pointer))
+  (bytes :long-long))
 
 (cffi:defcfun ("sf_write_raw" #.(swig-lispify "sf_write_raw" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (bytes :pointer))
+  (bytes :long-long))
 
 (cffi:defcfun ("sf_readf_short" #.(swig-lispify "sf_readf_short" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_writef_short" #.(swig-lispify "sf_writef_short" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_readf_int" #.(swig-lispify "sf_readf_int" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_writef_int" #.(swig-lispify "sf_writef_int" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_readf_float" #.(swig-lispify "sf_readf_float" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_writef_float" #.(swig-lispify "sf_writef_float" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_readf_double" #.(swig-lispify "sf_readf_double" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_writef_double" #.(swig-lispify "sf_writef_double" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (frames :pointer))
+  (frames :long-long))
 
 (cffi:defcfun ("sf_read_short" #.(swig-lispify "sf_read_short" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_write_short" #.(swig-lispify "sf_write_short" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_read_int" #.(swig-lispify "sf_read_int" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_write_int" #.(swig-lispify "sf_write_int" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_read_float" #.(swig-lispify "sf_read_float" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_write_float" #.(swig-lispify "sf_write_float" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_read_double" #.(swig-lispify "sf_read_double" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_write_double" #.(swig-lispify "sf_write_double" 'function)) :pointer
   (sndfile :pointer)
   (ptr :pointer)
-  (items :pointer))
+  (items :long-long))
 
 (cffi:defcfun ("sf_close" #.(swig-lispify "sf_close" 'function)) :int
   (sndfile :pointer))
