@@ -1,1 +1,11 @@
-Stub for libsndfile cffi bindings. Generated with SWIG.
+Just a stub for libsndfile cffi bindings. Generated with SWIG.
+
+You probably wont need to make anything, just load with asdf and use.
+All generated bindings are in cl-sndfile-swig.lisp
+
+(push #p"/path/to/cl-sndfile/" asdf:*central-registry*)
+(require :cl-sndfile)
+
+CFFI manual: http://common-lisp.net/project/cffi/manual/html_node/index.html
+
+Planning in future: Create upper level interface to libsndfile
